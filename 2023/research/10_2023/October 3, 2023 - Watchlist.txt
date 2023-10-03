@@ -1,0 +1,10 @@
+# Watchlist
+
+Long Stocks,
+ZS,
+VRSK,
+
+Short Stocks,
+ENPH,
+WBA,
+
