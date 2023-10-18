@@ -28,6 +28,7 @@ DLTR,
 KHC,
 PYPL,
 ANSS,
+MMM,
 
 
 
