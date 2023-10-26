@@ -52,3 +52,13 @@ trades_df = trades_df.dropna(axis=1,how='all').iloc[1:]
 pnl_df = df1.iloc[pnl_start:pnl_end]
 pnl_df.columns = df1.iloc[pnl_start].values
 pnl_df = pnl_df.dropna(axis=1,how='all').iloc[1:]
+
+# Fees 
+fees = df1[df1['DATE'] == "Total Commissions & Fees YTD"]
+fees = fees.iloc[:,1].values[0]
+fees = float(fees.replace("$", "").replace(",", ""))
+
+net_liq = df1[df1["DATE"] == "Net Liquidating Value"]
+net_liq = float(net_liq.iloc[:,1].values[0].replace("$", "").replace(",", ""))
+
+pnl_ytd = float(pnl_df.iloc[-1,5].replace("$", "").replace(",", ""))
