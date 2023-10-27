@@ -4,7 +4,7 @@ import numpy as np
 from IPython.display import display
 
 # Change This
-TODAYS_DATE = "2023-10-26"
+TODAYS_DATE = "2023-10-27"
 
 files_list = os.listdir("../../../live_portfolio/2023/010_2023/")
 files_list.remove(".DS_Store") # Remove Mac's .DS_Store file.
@@ -52,6 +52,7 @@ trades_df = trades_df.dropna(axis=1,how='all').iloc[1:]
 pnl_df = df1.iloc[pnl_start:pnl_end]
 pnl_df.columns = df1.iloc[pnl_start].values
 pnl_df = pnl_df.dropna(axis=1,how='all').iloc[1:]
+pnl_df = pnl_df[pnl_df["P/L YTD"] != "$0.00"]
 
 # Fees 
 fees = df1[df1['DATE'] == "Total Commissions & Fees YTD"]
